@@ -28,10 +28,10 @@ let pontosDoOponente = 0;
 //sons do jogo
 let ponto;
 let raquetada;
-let trilha;
+//let trilha;
 
 function preload(){
-  trilha = loadSound("trilha.mp3");
+  //trilha = loadSound("trilha.mp3");
   raquetada = loadSound("raquetada.mp3");
   ponto = loadSound("ponto.mp3");
 }
@@ -106,10 +106,20 @@ xBolinha,yBolinha,raio);
   }
 }
 
+//function movimentaRaqueteOponente(){
+  //velocidadeYOponente = yBolinha -yRaqueteOponente - raqueteComprimento / 2 - 30;
+  //yRaqueteOponente += velocidadeYOponente}
+ 
+ 
 function movimentaRaqueteOponente(){
-  velocidadeYOponente = yBolinha -yRaqueteOponente - raqueteComprimento / 2 - 30;
-  yRaqueteOponente += velocidadeYOponente
+    if (keyIsDown("87")){
+        yRaqueteOponente -= 10;
+    }
+    if (keyIsDown("83")){
+        yRaqueteOponente += 10;
+    }
 }
+  
 
 function incluiPlacar(){
   stroke(255);
